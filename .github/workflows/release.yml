@@ -1,0 +1,52 @@
+name: Compile & Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compile-release:
+    runs-on: ubuntu-latest
+    container: mono:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download unzip & zip
+        run: apt update && apt install unzip zip
+        
+      - name: Download Node 19
+        run: curl -fsSL https://deb.nodesource.com/setup_19.x | bash - && apt-get install -y nodejs
+
+      - name: Download dependencies
+        run: curl ${{ secrets.dependencies }} -o 7dtd-binaries.zip
+
+      - name: Unzip dependencies
+        run: unzip 7dtd-binaries.zip -d 7dtd-binaries/ 
+
+      - name: Build
+        run: msbuild NoZombieDigging.sln /property:Configuration=Release
+
+      - name: Set up release folder
+        run: mkdir release
+
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M-%S')"
+
+      - name: Create release zip
+        run: |
+          cp ./NoZombieDigging/bin/Release/NoZombieDigging.dll release/
+          cp ./NoZombieDigging/ModInfo.xml release/
+          zip -r NoZombieDigging-${{ steps.date.outputs.date }}.zip release/ 
+
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: NoZombieDigging-${{ steps.date.outputs.date }}.zip
+          name: v${{ steps.date.outputs.date }}
