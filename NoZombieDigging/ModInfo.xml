@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xml>
+    <ModInfo>
+        <Name value="NoZombieDigging" />
+        <Description value="Prevents zombies from thinking about digging into terrain." />
+        <Author value="tigercat2000" />
+        <Version value="1.0.0" />
+    </ModInfo>
+</xml>
