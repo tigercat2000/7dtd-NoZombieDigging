@@ -36,8 +36,9 @@ jobs:
       - name: Create release zip
         run: |
           cp ./NoZombieDigging/bin/Release/NoZombieDigging.dll release/
-          cp ./NoZombieDigging/ModInfo.xml NoZombieDigging/
-          zip -r NoZombieDigging-${{ steps.date.outputs.date }}.zip NoZombieDigging/ 
+          cp ./NoZombieDigging/ModInfo.xml release/
+          mv release/ NoZombieDigging-release/
+          zip -r NoZombieDigging-${{ steps.date.outputs.date }}.zip NoZombieDigging-release/ 
 
       - name: Release
         uses: "marvinpinto/action-automatic-releases@latest"
