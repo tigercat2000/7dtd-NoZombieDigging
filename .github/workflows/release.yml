@@ -6,8 +6,8 @@ on:
       - main
 
 permissions:
-  contents: read|write
-  deployments: read|write
+  contents: write
+  deployments: write
 
 jobs:
   compile-release:
