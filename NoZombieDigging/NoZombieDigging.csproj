@@ -33,34 +33,34 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="0Harmony, Version=2.3.0.0">
-            <HintPath>..\7dtd-binaries\0Harmony.dll</HintPath>
+            <HintPath>..\References\0Harmony.dll</HintPath>
         </Reference>
         <Reference Include="Assembly-CSharp, Version=0.0.0.0">
-            <HintPath>..\7dtd-binaries\Assembly-CSharp.dll</HintPath>
+            <HintPath>..\References\Assembly-CSharp.dll</HintPath>
         </Reference>
         <Reference Include="LogLibrary, Version=0.0.0.0">
-            <HintPath>..\7dtd-binaries\LogLibrary.dll</HintPath>
+            <HintPath>..\References\LogLibrary.dll</HintPath>
         </Reference>
         <Reference Include="mscorlib, Version=4.0.0.0">
-            <HintPath>..\7dtd-binaries\mscorlib.dll</HintPath>
+            <HintPath>..\References\mscorlib.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine, Version=0.0.0.0">
-            <HintPath>..\7dtd-binaries\UnityEngine.dll</HintPath>
+            <HintPath>..\References\UnityEngine.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0">
-            <HintPath>..\7dtd-binaries\UnityEngine.CoreModule.dll</HintPath>
+            <HintPath>..\References\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
         <Reference Include="System">
-            <HintPath>..\7dtd-binaries\System.dll</HintPath>
+            <HintPath>..\References\System.dll</HintPath>
         </Reference>
         <Reference Include="System.Core">
-            <HintPath>..\7dtd-binaries\System.Core.dll</HintPath>
+            <HintPath>..\References\System.Core.dll</HintPath>
         </Reference>
         <Reference Include="System.Data">
-            <HintPath>..\7dtd-binaries\System.Data.dll</HintPath>
+            <HintPath>..\References\System.Data.dll</HintPath>
         </Reference>
         <Reference Include="System.Xml">
-            <HintPath>..\7dtd-binaries\System.Xml.dll</HintPath>
+            <HintPath>..\References\System.Xml.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>

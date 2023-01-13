@@ -23,12 +23,6 @@ jobs:
       - name: Download Node 19
         run: curl -fsSL https://deb.nodesource.com/setup_19.x | bash - && apt-get install -y nodejs
 
-      - name: Download dependencies
-        run: curl ${{ secrets.dependencies }} -o 7dtd-binaries.zip
-
-      - name: Unzip dependencies
-        run: unzip 7dtd-binaries.zip -d 7dtd-binaries/ 
-
       - name: Build
         run: msbuild NoZombieDigging.sln /property:Configuration=Release
 

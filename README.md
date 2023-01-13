@@ -37,5 +37,4 @@ like this to all zombie melee weapons:
 
 ## Development
 
-To build this mod, it needs references to dll files from the game. 
-See [7dtd-binaries/README.md](7dtd-binaries/README.md) for more information.
+See [References/README.md](References/README.md) for more information.
