@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 permissions:
   contents: read
@@ -46,8 +45,10 @@ jobs:
           zip -r NoZombieDigging-${{ steps.date.outputs.date }}.zip release/ 
 
       - name: Release
-        uses: ncipollo/release-action@v1
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          artifacts: NoZombieDigging-${{ steps.date.outputs.date }}.zip
-          name: ${{ steps.date.outputs.date }}
-          tag: ${{ steps.date.outputs.date }}
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: NoZombieDigging-${{ steps.date.outputs.date }}.zip
